@@ -50,7 +50,7 @@
           
           <li><a href="#more-features">KnowSearch</a></li>
           <li><a href="#about">Demo</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">Sign up for Beta</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -234,21 +234,19 @@
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
               <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="text" id="subject" placeholder="Name" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
                 <div class="form-row">
-      
+                
                   <div class="form-group col-lg-6">
                     <input type="email" class="form-control" name="reply_to" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                     <div class="validation"></div>
                   </div>
                 </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="text" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
+                <input type="hidden" name="subject" value="Beta Signup" />
+                
                 <input type="hidden" name="access_token" value="xqfkh5oj948br3n1ocjj5ga2" />
       <!-- return urls can be fully qualified -OR-
          start with / for root relative -OR-
@@ -256,7 +254,7 @@
     <input type="hidden" name="success_url" value="https://knowmap.github.io/thankyou.html" />
     <input type="hidden" name="error_url" value="/" />
    
-                <div class="text-center"><button type="submit" title="Send Message" id="submit_form">Send Message</button></div>
+                <div class="text-center"><button type="submit" title="Send Message" id="submit_form">Sign up for Beta!</button></div>
               </form>
 
               <script>
