@@ -196,10 +196,9 @@
 
           <div class="col-lg-4 col-md-4">
             <div class="contact-about">
-              <h5><a href="#intro" class="scrollto" style="font-family: 'Pacifico', cursive;   ">KnowMap</a></h5>
+              <h4><a href="#intro" class="scrollto" style="font-family: 'Pacifico', cursive;   ">KnowMap</a></h4>
 
-
-              <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+<p>You can find us on</p>
               <div class="social-links">
                 <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                 <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -234,14 +233,11 @@
             <div class="form">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
+              <form action="https://postmail.invotes.com/send" method="post" id="email_form">
                 <div class="form-row">
+      
                   <div class="form-group col-lg-6">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validation"></div>
-                  </div>
-                  <div class="form-group col-lg-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <input type="email" class="form-control" name="reply_to" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                     <div class="validation"></div>
                   </div>
                 </div>
@@ -250,11 +246,29 @@
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <textarea class="form-control" name="text" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                   <div class="validation"></div>
                 </div>
-                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+                <input type="hidden" name="access_token" value="xqfkh5oj948br3n1ocjj5ga2" />
+      <!-- return urls can be fully qualified -OR-
+         start with / for root relative -OR-
+         start with . for url relative --> 
+    <input type="hidden" name="success_url" value="https://knowmap.github.io/thankyou.html" />
+    <input type="hidden" name="error_url" value="/" />
+   
+                <div class="text-center"><button type="submit" title="Send Message" id="submit_form">Send Message</button></div>
               </form>
+
+              <script>
+    var submitButton = document.getElementById("submit_form");
+    var form = document.getElementById("email_form");
+    form.addEventListener("submit", function (e) {
+        setTimeout(function() {
+            submitButton.value = "Sending...";
+            submitButton.disabled = true;
+        }, 1);
+    });
+</script> 
             </div>
           </div>
 
@@ -262,6 +276,12 @@
 
       </div>
     </section><!-- #contact -->
+
+
+
+
+
+
 
   </main>
 
@@ -300,9 +320,7 @@
   <script src="lib/superfish/superfish.min.js"></script>
   <script src="lib/magnific-popup/magnific-popup.min.js"></script>
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
+  
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 
